@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>E-challan system</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="E-Challan System">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link type="text/css" rel="stylesheet" href="{% static 'style/not_wearing_helmet.css' %}">
+</head>
+
+<body>
+
+	<div class="header">
+	
+		<div class="background_image" style="background-image:url({% static 'images/a2.jpg' %})"></div>
+		<h1> E-Challan System </h1>
+	
+	</div>
+
+	<div id="navbar">
+			<ul>
+				<li><a href="index2.html"> &nbsp Home &nbsp </a></li>
+				&nbsp &nbsp &nbsp &nbsp
+				<li><a href="Triple_Seating.html"> &nbsp Traffic crime detected &nbsp </a></li>
+				&nbsp &nbsp &nbsp &nbsp
+				<li><a href="vehicle_identified.html"> &nbsp Vehicle identified &nbsp </a></li>
+				&nbsp &nbsp &nbsp &nbsp
+				<li><a href="e_challan.html"> &nbsp e-challan system &nbsp </a></li>
+
+			</ul>
+	</div>
+
+	<h4> Not wearing helmet </h4>
+
+	<video width="840" height="480" controls autoplay >
+		<source src="{% static 'videos\song.mp4' %}">
+		<source src="{% static 'videos\song.ogg' %}">
+		<source src="{% static 'videos\song.webm' %}">
+	</video>
+
+
+	<div class="sidebar">
+		<h2> &nbsp&nbsp Challans </h2>
+		<ul>
+			<li><a href="Triple_Seating.html"> Triple Seating</a></li>
+				<br> <br> 
+			<li><a href="not_wearing_helmet.html"> No Helmet wearing </a></li>
+				<br> <br> 
+			<li><a href="Unauthorize_vehicle.html"> Unauthorized vehicle</a></li>
+				<br> <br> 
+			<li><a href="Oversize_vehicle.html"> Oversize vehicle</a></li>
+				<br> <br> 
+			<li><a href="Rough_driving.html"> Rough or dangerous driving</a></li>
+				<br> <br> 
+			<li><a href="Not_driving_in_proper_lane.html"> Not driving in proper lane</a></li>
+				<br> <br> 
+			<li><a href="wrong_turn.html"> Not taking adequate turn while &nbsp&nbsp&nbsp&nbsp turning</a></li>
+		</ul>
+	</div>
+
+	<div class="main">
+		<h3> Welcome !!! </h3>
+		<table class="content-table">
+
+		  <thead>
+
+		    <tr>
+		      <th> S.No. </th>
+		      <th> Vehicle Number </th>
+		      <th> Challan </th>
+		   </tr>
+
+		  </thead>
+		
+		  <tbody>
+
+
+		  	{% for Row in Rows %}
+		    <tr>
+		      <td>{{Row.id}}</td>
+		      <td>{{Row.Vehicle_Number}}</td>
+		      <td> {{Row.Challan}} </td>
+		    </tr>
+		    {% endfor %}
+
+		  </tbody>
+		
+		</table>
+	</div>
+
+	<div id="footer">
+
+		<ul>
+			<li><a href="">About lnct.ac.in </a></li>
+			<li><a href="">Careers</a></li>
+			<li><a href="">Help</a></li>
+			<li><a href="">Contact Us</a></li>
+		</ul>
+
+		&copy; 2020 lnct.ac.in. All Rights Reserved.
+	</div>
+
+</body>
+
+</html>
+
